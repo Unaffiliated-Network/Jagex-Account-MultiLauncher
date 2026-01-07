@@ -34,20 +34,30 @@ Frustrated with the redundant workarounds, I decided to take matters into my own
 
 ## 📸 Screenshots
 
-### Main Interface
-![Main Interface](screenshots/main-interface.png)
+<p align="center">
+  <img src="screenshots/main-interface.png" alt="Main Interface" width="400">
+  <br><em>Main Interface</em>
+</p>
 
-### Create New Profile
-![Create Profile](screenshots/create-profile.png)
+<p align="center">
+  <img src="screenshots/create-profile.png" alt="Create Profile" width="400">
+  <br><em>Create New Profile</em>
+</p>
 
-### Profile Created Successfully
-![Profile Created](screenshots/profile-created.png)
+<p align="center">
+  <img src="screenshots/profile-created.png" alt="Profile Created" width="400">
+  <br><em>Profile Created Successfully</em>
+</p>
 
-### Jagex Launcher Login (Per Profile)
-![Jagex Login](screenshots/jagex-login.png)
+<p align="center">
+  <img src="screenshots/jagex-login.png" alt="Jagex Login" width="400">
+  <br><em>Jagex Launcher Login</em>
+</p>
 
-### Running Multiple Accounts
-![Jagex Launcher](screenshots/jagex-launcher.png)
+<p align="center">
+  <img src="screenshots/jagex-launcher.png" alt="Jagex Launcher" width="500">
+  <br><em>Running Multiple Accounts</em>
+</p>
 
 ---
 
