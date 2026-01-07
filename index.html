@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagex Multi Accounting</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal-styles.css">
+    <link rel="stylesheet" href="avatar-styles.css">
+    <link rel="stylesheet" href="profile-actions.css">
+    <link rel="stylesheet" href="user-account-modal.css">
+</head>
+
+<body>
+    <div class="window">
+        <!-- Particles Background -->
+        <div id="particles-js"></div>
+
+        <!-- Custom Title Bar -->
+        <div class="titlebar">
+            <div class="titlebar-drag">
+                <img src="icon.ico" class="titlebar-icon" alt="icon">
+                <span class="title">Jagex Multi-Launcher</span>
+            </div>
+            <div class="titlebar-buttons">
+                <button class="titlebar-button minimize" onclick="minimizeApp()">
+                    <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                </button>
+                <button class="titlebar-button close" onclick="closeApp()">
+                    <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="1" y1="1" x2="11" y2="11" stroke="currentColor" stroke-width="1.5" />
+                        <line x1="11" y1="1" x2="1" y2="11" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="header">
+                <img src="logo.png" alt="Jagex Multi-Launcher" class="header-logo">
+            </div>
+
+            <div class="profiles-container" id="profilesContainer">
+                <!-- Profiles will be loaded here -->
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" onclick="launchSelected()">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 3L19 12L5 21V3Z" fill="currentColor" />
+                    </svg>
+                    Launch Selected Profiles
+                </button>
+                <div class="secondary-actions">
+                    <button class="btn btn-secondary" onclick="createProfile()">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                        Create Profile
+                    </button>
+                </div>
+            </div>
+
+            <div class="status" id="status">Ready</div>
+        </div>
+
+        <!-- Custom Modals -->
+        <div id="createModal" class="modal">
+            <div class="modal-content">
+                <h2>Create New Profile</h2>
+
+                <!-- Windows User Account Notice -->
+                <div class="user-account-notice">
+                    <svg class="notice-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 9V13M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="notice-text">
+                        <strong>Windows User Account Required</strong><br>
+                        A new Windows user account will be created for this profile to ensure complete isolation. You'll
+                        need to provide a password.
+                    </div>
+                </div>
+
+                <input type="text" id="profileNameInput" placeholder="Enter profile name..." class="modal-input">
+
+                <div class="avatar-upload">
+                    <label for="avatarInput" class="avatar-upload-label">
+                        <div class="avatar-preview" id="avatarPreview">
+                            <span>+</span>
+                        </div>
+                        <span class="avatar-upload-text">Upload Avatar (Optional)</span>
+                    </label>
+                    <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                </div>
+
+                <div class="password-group">
+                    <label>Profile Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="profilePasswordInput"
+                            placeholder="Enter password for this profile...">
+                        <button type="button" class="password-toggle"
+                            onclick="togglePasswordVisibility('profilePasswordInput', this)">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="password-strength">
+                        <div class="password-strength-bar">
+                            <div class="password-strength-fill" id="passwordStrengthFill"></div>
+                        </div>
+                        <span class="password-strength-text" id="passwordStrengthText"></span>
+                    </div>
+                </div>
+
+                <label class="remember-password">
+                    <input type="checkbox" id="rememberPassword" checked>
+                    <span>Remember password for auto-launch</span>
+                </label>
+
+                <div class="modal-buttons">
+                    <button class="modal-btn modal-btn-cancel" onclick="closeCreateModal()">Cancel</button>
+                    <button class="modal-btn modal-btn-confirm" onclick="confirmCreateProfile()">Create</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="deleteModal" class="modal">
+            <div class="modal-content">
+                <h2>Delete Profile</h2>
+                <p id="deleteMessage">Are you sure you want to delete this profile?</p>
+                <div class="modal-buttons">
+                    <button class="modal-btn modal-btn-cancel" onclick="closeDeleteModal()">Cancel</button>
+                    <button class="modal-btn modal-btn-danger" onclick="confirmDeleteProfile()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/particles.js/particles.js"></script>
+    <script src="renderer.js"></script>
+</body>
+
+</html>

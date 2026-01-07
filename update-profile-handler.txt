@@ -1,0 +1,34 @@
+ipcMain.handle('update-profile', (event, updateData) => {
+    let profiles = [];
+    
+    if (fs.existsSync(CONFIG_PATH)) {
+        try {
+            const data = fs.readFileSync(CONFIG_PATH, 'utf8');
+            const parsed = JSON.parse(data);
+            profiles = Array.isArray(parsed) ? parsed : [];
+        } catch (e) {
+            console.error('Error reading profiles:', e);
+            profiles = [];
+        }
+    }
+    
+    // Find and update the profile
+    const profileIndex = profiles.findIndex(p => p.Name === updateData.oldName);
+    if (profileIndex !== -1) {
+        profiles[profileIndex].Name = updateData.newName;
+        profiles[profileIndex].Avatar = updateData.avatar;
+        
+        // Rename folder if name changed
+        if (updateData.oldName !== updateData.newName) {
+            const oldPath = path.join(PROFILES_PATH, updateData.oldName);
+            const newPath = path.join(PROFILES_PATH, updateData.newName);
+            if (fs.existsSync(oldPath)) {
+                fs.renameSync(oldPath, newPath);
+            }
+        }
+        
+        fs.writeFileSync(CONFIG_PATH, JSON.stringify(profiles, null, 2));
+        return true;
+    }
+    return false;
+});

@@ -1,0 +1,41 @@
+/* Profile Action Buttons */
+.profile-actions {
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.profile-item:hover .profile-actions {
+    opacity: 1;
+}
+
+.profile-action-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.profile-action-btn svg {
+    width: 16px;
+    height: 16px;
+    color: white;
+}
+
+.profile-action-btn.edit-btn:hover {
+    background: rgba(138, 43, 226, 0.6);
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+.profile-action-btn.delete-btn:hover {
+    background: rgba(231, 76, 60, 0.6);
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}

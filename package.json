@@ -1,0 +1,54 @@
+{
+  "name": "jagex-multi-launcher",
+  "version": "1.0.0",
+  "description": "Launch multiple Jagex accounts simultaneously",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win",
+    "build:portable": "electron-builder --win portable"
+  },
+  "author": "Unaffiliated Network",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.unaffiliated.jagexmultilauncher",
+    "productName": "Jagex Multi-Launcher",
+    "copyright": "Copyright © 2026 Unaffiliated Network",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/*/{CHANGELOG.md,README.md,readme.md,License.md,license.md}",
+      "!**/*.map"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icon.png",
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Jagex Multi-Launcher"
+    }
+  },
+  "dependencies": {
+    "particles.js": "^2.0.0",
+    "sudo-prompt": "^9.2.1"
+  }
+}

@@ -1,0 +1,195 @@
+.user-account-notice {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 152, 0, 0.15));
+    border: 1px solid rgba(255, 193, 7, 0.4);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.user-account-notice .notice-icon {
+    width: 24px;
+    height: 24px;
+    color: #ffc107;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.user-account-notice .notice-text {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+.user-account-notice .notice-text strong {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+/* Password input group */
+.password-group {
+    margin-top: 16px;
+}
+
+.password-group label {
+    display: block;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+}
+
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input-wrapper input {
+    width: 100%;
+    padding: 12px 16px;
+    padding-right: 48px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.password-input-wrapper input:focus {
+    outline: none;
+    border-color: rgba(138, 43, 226, 0.6);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.password-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Remember password checkbox */
+.remember-password {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+.remember-password input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #8a2be2;
+    cursor: pointer;
+}
+
+.remember-password span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Password strength indicator */
+.password-strength {
+    margin-top: 8px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.password-strength-bar {
+    height: 4px;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.password-strength-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.password-strength-fill.weak {
+    width: 33%;
+    background: #e74c3c;
+}
+
+.password-strength-fill.medium {
+    width: 66%;
+    background: #f39c12;
+}
+
+.password-strength-fill.strong {
+    width: 100%;
+    background: #2ecc71;
+}
+
+.password-strength-text {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    min-width: 50px;
+    text-align: right;
+}
+
+/* Confirm modal for Windows user creation */
+.confirm-modal-content {
+    text-align: center;
+}
+
+.confirm-modal-content .warning-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    color: #ffc107;
+}
+
+.confirm-modal-content h2 {
+    margin-bottom: 12px;
+}
+
+.confirm-modal-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.confirm-modal-content .highlight {
+    color: #fff;
+    background: rgba(138, 43, 226, 0.3);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Windows user badge in profile list */
+.windows-user-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    font-size: 12px;
+    opacity: 0.7;
+}
