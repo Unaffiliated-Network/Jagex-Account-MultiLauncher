@@ -26,9 +26,28 @@ Frustrated with the redundant workarounds, I decided to take matters into my own
 - 🚀 **One-Click Launch** - Select profiles and launch multiple accounts instantly
 - 👤 **Windows User Isolation** - Each profile runs under its own Windows user account for complete separation
 - 🔐 **Secure Password Storage** - Passwords are encrypted locally using AES-256
-- 🎨 **Custom Avatars** - Personalize each profile with custom images
+- 🎨 **Custom Avatars** - Personalize each profile with custom images (supports PNG, JPG, and **animated GIFs**!)
 - 🌌 **Beautiful UI** - Modern, dark-themed interface with particle effects
 - 📦 **Portable** - Single executable, no complex installation
+
+---
+
+## 📸 Screenshots
+
+### Main Interface
+![Main Interface](screenshots/main-interface.png)
+
+### Create New Profile
+![Create Profile](screenshots/create-profile.png)
+
+### Profile Created Successfully
+![Profile Created](screenshots/profile-created.png)
+
+### Jagex Launcher Login (Per Profile)
+![Jagex Login](screenshots/jagex-login.png)
+
+### Running Multiple Accounts
+![Jagex Launcher](screenshots/jagex-launcher.png)
 
 ---
 
@@ -95,8 +114,8 @@ See the [Building](#-building) section below.
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/windows-jagex-multi-launcher.git
-cd windows-jagex-multi-launcher
+git clone https://github.com/Unaffiliated-Network/Jagex-Account-MultiLauncher.git
+cd Jagex-Account-MultiLauncher
 
 # Install dependencies
 npm install
